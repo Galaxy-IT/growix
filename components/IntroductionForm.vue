@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-2">
     <div class="info d-flex justify-content-center align-items-center">
-      <b-form class=" mx-auto info__form" @submit.prevent="onSubmit">
+      <b-form class=" mx-auto" @submit.prevent="onSubmit">
         <slot />
         <b-form-group id="email" :label="$t('email_address')" label-for="email">
           <b-form-input
@@ -111,11 +111,7 @@ export default Vue.extend({
 </script>
 <style scoped>
 .info {
-  height: calc(100vh - 80px);
-}
-.info__form {
-  width: 100%;
-  max-width: 50%;
+  height: calc(100vh - 120px);
 }
 .info__input.invalid {
   transition: all 0.3s ease;

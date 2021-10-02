@@ -15,5 +15,6 @@
     "show_data": "Show Data",
     "hide_data": "Hide data",
     "prev": "Prev",
-    "next": "Next"
+    "next": "Next",
+    "no_posts": "No posts"
   }

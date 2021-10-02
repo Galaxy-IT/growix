@@ -32,12 +32,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import _ from "lodash"
 import HeaderInfo from '~/components/HeaderInfo.vue'
 import Heading from '~/components/Heading.vue'
 import { getModule } from 'vuex-module-decorators'
 import Posts from '~/store/Posts'
 import Info from "~/components/Info.vue"
-import _ from "lodash";
 export default Vue.extend({
   name: 'Result',
   components: {
@@ -48,6 +48,7 @@ export default Vue.extend({
   data() {
     return {
       isDataShown: false,
+      isLoading: true,
       posts: [],
       page: +this.$route.query.page | 1,
       pageSize: 5,
@@ -69,6 +70,7 @@ export default Vue.extend({
     try {
       const posts = getModule(Posts, this.$store)
       this.posts = await posts.getPosts()
+    
       if (this.allItems) {
         this.allItems = _.chunk(this.posts, this.pageSize)
       }
@@ -78,6 +80,7 @@ export default Vue.extend({
         this.isDataShown = true
         this.page = +this.$route.query.page
       }
+      this.isLoading = false
     } catch(e) {
       console.log(e);
     }
@@ -89,6 +92,7 @@ export default Vue.extend({
     align-items: center;
   }
   .pagination li a {
+    color: #000;
     display: block;
     margin: 0 3px;
     padding: 7px 10px;
@@ -102,7 +106,7 @@ export default Vue.extend({
   .page-item.active a {
     color: #fff;
   }
- .page-link {
-   cursor: pointer;
- }
+  .page-link {
+    cursor: pointer;
+  }
 </style>
