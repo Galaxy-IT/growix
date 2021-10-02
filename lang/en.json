@@ -1,0 +1,19 @@
+{
+    "introduction_form": "Introduction form",
+    "email_address": "Email address:",
+    "enter_email": "Enter email",
+    "submit": "Submit",
+    "home": "Home",
+    "result": "Result",
+    "filed_required": "Filed is required",
+    "symbols": "symbols",
+    "min": "min",
+    "max": "max",
+    "email_validation": "Email should contain domain name and @",
+    "data_info": "Data info",
+    "load_data": "Load data",
+    "show_data": "Show Data",
+    "hide_data": "Hide data",
+    "prev": "Prev",
+    "next": "Next"
+  }
